@@ -319,7 +319,7 @@ class BaiduFS(Operations):
                 foofoo = json.loads(foo)
                 block_md5 = foofoo['md5']
             except:
-                 print foo
+                 #print foo
 
 
 
@@ -401,4 +401,4 @@ if __name__ == '__main__':
     if len(sys.argv) != 4:
         print 'Usage {0} username password mountpoint'.format(sys.argv[0])
         sys.exit(0)
-    FUSE(BaiduFS(sys.argv[1],sys.argv[2]),sys.argv[3],foreground=True, nonempty=True)
+    FUSE(BaiduFS(sys.argv[1],sys.argv[2]),sys.argv[3],foreground=True, allow_other=True, nonempty=True)
